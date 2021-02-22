@@ -1,6 +1,14 @@
 *{
     box-sizing: border-box;
 }
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 #snakeField{
     display: flex;
     flex-wrap: wrap;
@@ -14,4 +22,12 @@
     height: 50px;
     width: 10%;
     border-radius: 5px;
+}
+
+.item:hover{
+    cursor: pointer;
+}
+
+.item.active{
+    background-color: orange;
 }
