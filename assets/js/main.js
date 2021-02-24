@@ -7,7 +7,7 @@ let currentScore = 0;
 let createScoreContainer = () => {
     const currentScoreContainer = document.createElement('div');
     currentScoreContainer.id = "currentScoreContainer";
-    currentScoreContainer.innerHTML = '<p class="points">Punkte:</p>' + currentScore;
+    currentScoreContainer.innerHTML = '<div class="inner"><p class="points">Punkte:</p>' + currentScore + '</div>';
     gameContainer.appendChild(currentScoreContainer);
 }
 createScoreContainer();
@@ -36,7 +36,7 @@ let updateScore = (item) =>{
         item.classList.remove("catch");
         if(currentScore < 10){
             currentScore++;
-            currentScoreContainer.innerHTML = currentScore;
+            currentScoreContainer.innerHTML = '<div class="inner"><p class="points">Punkte:</p>' + currentScore + '</div>';
             gameContainer.appendChild(currentScoreContainer);
         }
         if(currentScore >= 10){
@@ -53,6 +53,9 @@ itemElements.forEach(item => {
         updateScore(item);
     })
 })
+
+
+
 
 //create randomItem 
 let randomTimeNumber = Math.floor(Math.random() * (4 - 2 + 1) + 2);
